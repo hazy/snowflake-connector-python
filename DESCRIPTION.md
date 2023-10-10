@@ -12,6 +12,9 @@ Source code is also available at: https://github.com/snowflakedb/snowflake-conne
   - Added for non-Windows platforms command suggestions (chown/chmod) for insufficient file permissions of config files.
   - Fixed issue with connection diagnostics failing to complete certificate checks.
   - Fixed issue that arrow iterator causes `ImportError` when the c extensions are not compiled.
+  - Added the `backoff` argument to `snowflake.connector.connect` allowing for configurable backoff policy between retries of failed requests. See available implementations in the `time_util` module.
+  - Added the `socket_timeout` argument to `snowflake.connector.connect` specifying socket read and connect timeout.
+  - Fixed `login_timeout` and `network_timeout` behaviour. Retries of login and network requests are now properly halted after these timeouts expire.
 
 - v3.3.0(October 10,2023)
 
